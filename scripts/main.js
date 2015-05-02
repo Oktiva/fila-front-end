@@ -14,7 +14,7 @@ angular.module('fila',['serviceModule', 'toaster', 'ngAnimate'])
 	$scope.audio = new Audio('sound/alert-song.mp3');
 	$scope.setVars = function(){
 		service.getCurrentPass().then(function(data){
-			if($scope.currentPass.senha != ""){
+			if($scope.currentPass.senha != "" && data.senha != $scope.currentPass.senha){
 				$scope.calledPass.unshift({"senha" : $scope.currentPass.senha});
 				$scope.page = 1;
 				$scope.refreshHistorical();
