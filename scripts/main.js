@@ -1,23 +1,52 @@
 angular.module('fila',['serviceModule', 'toaster', 'ngAnimate'])
 
 .controller('mainController', ['$scope', 'service', 'toaster', function($scope, service, toaster) {
-	$scope.calledPass = [];
+	$scope.timeForRefresh = localStorage.getItem("timeForRefresh") == null ? 10 : localStorage.getItem("timeForRefresh");
+	$scope.timeForPageRefresh = localStorage.getItem("timeForPageRefresh") == null ? 5 : localStorage.getItem("timeForPageRefresh");
 	$scope.currentPass = {"senha" : ""};
 	$scope.confPopup = false;
-	$scope.timeForRefresh = localStorage.getItem("timeForRefresh") == null ? 10 : localStorage.getItem("timeForRefresh");
 	$scope.newTimer = $scope.timeForRefresh;
+	$scope.calledPass = [];
+	$scope.showingData = [];
+	$scope.maxPerPage = 6;
+	$scope.page = 1;
 
 	$scope.setVars = function(){
-		service.getCalledPass().then(function(data){
-			$scope.calledPass = data;
-		});
 		service.getCurrentPass().then(function(data){
+			if($scope.currentPass.senha != ""){
+				$scope.calledPass.unshift({"senha" : $scope.currentPass.senha});
+				$scope.paginate();
+			}
 			$scope.currentPass = data;
+
 		});
 		setTimeout(function(){ $scope.setVars(); }, $scope.timeForRefresh * 1000);
 	}
 
+	$scope.refreshPage = function(){
+		$scope.paginate();
+		console.log("refreshed");
+		setTimeout(function(){ $scope.refreshPage(); }, $scope.timeForPageRefresh * 1000);
+	}
+
+	$scope.paginate = function(){
+		if($scope.maxPerPage * ($scope.page - 1) > $scope.calledPass.length){
+			$scope.page = 1;
+			$scope.reset = true;
+		}
+		$scope.showingData = [];
+		for (var i = $scope.maxPerPage * ($scope.page - 1); i < $scope.maxPerPage * $scope.page; i++) {
+			if(typeof $scope.calledPass[i] != "undefined"){
+				$scope.showingData.push($scope.calledPass[i]);
+			}
+		};
+		//$scope.page ++;
+		
+	}
+
+
 	$scope.setVars();
+	$scope.refreshPage();
 
 	$scope.toggleConfiguration = function(b){
 		if(b === true ||  b === false){

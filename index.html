@@ -23,6 +23,11 @@
     <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
   </head>
   <body ng-controller="mainController">
+      <audio controls>
+        <source src="horse.ogg" type="audio/ogg">
+        <source src="horse.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
       <toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
       <div ng-click="toggleConfiguration(true)" class="configurationClick"></div>
       <div class="container">
@@ -33,7 +38,6 @@
           <div class="title">
             Senha Atual
           </div>
-
           <div class="box-content">
             <div class="current verticalAlign">
               <span class="item">{{currentPass.senha}}</span>
@@ -45,7 +49,7 @@
             Senhas chamadas
           </div>
           <div class="box-content">
-            <div class="col-md-12 passItem verticalAlign" ng-repeat="item in calledPass track by $index">
+            <div class="col-md-12 passItem verticalAlign" ng-repeat="item in showingData track by $index">
               <span class="item">
                 {{item.senha}}
               </span>
