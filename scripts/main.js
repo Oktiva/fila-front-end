@@ -20,7 +20,7 @@ angular.module('fila',['serviceModule', 'toaster', 'ngAnimate'])
 				$scope.refreshHistorical();
 			}
 			$scope.currentPass = data;
-			//$scope.audio.play();
+			$scope.audio.play();
 
 		});
 		setTimeout(function(){ $scope.setVars(); }, $scope.timeForRefresh * 1000);
@@ -28,7 +28,6 @@ angular.module('fila',['serviceModule', 'toaster', 'ngAnimate'])
 
 	$scope.refreshPage = function(){
 		$scope.paginate();
-		console.log("refreshed");
 		setTimeout(function(){ $scope.refreshPage(); }, $scope.timeForPageRefresh * 1000);
 	}
 
