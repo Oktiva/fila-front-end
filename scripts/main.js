@@ -18,7 +18,7 @@ angular.module('fila',['serviceModule', 'toaster', 'ngAnimate'])
 				$scope.paginate();
 			}
 			$scope.currentPass = data;
-			//$scope.audio.play();
+			$scope.audio.play();
 
 		});
 		setTimeout(function(){ $scope.setVars(); }, $scope.timeForRefresh * 1000);
