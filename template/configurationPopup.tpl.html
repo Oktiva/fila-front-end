@@ -1,0 +1,20 @@
+<div class="modal fade in" style="display: block;background-color: rgba(0,0,0,0.8);" stop-event='click'>
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" ng-click="toggleConfiguration(false)">×</button>
+          <h4 class="modal-title">Large modal</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <p>Tempo de recarregamento(em segundos)</p>
+            <input type="text" class="form-control" ng-model="newTimer" only-digits>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" ng-click="saveInfo()">Salvar</button>
+          <button type="button" class="btn btn-default" ng-click="toggleConfiguration(false)">Fechar</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div>

@@ -57,7 +57,9 @@ h3{
   font-size: 100px;
   text-align: center;
   position: relative;
-  top: calc(50% - 300px);
+  display: table;
+  height: calc(100% - 80px);
+  width: 100%;
 }
 
 .hasBg{
@@ -71,19 +73,33 @@ h3{
   height: calc(100% - 80px);
 }
 
+.box-content{
+  height: 100%;
+}
+
 .passItem{
   font-size: 30px;
   margin: 5px 0;
   background-color: #ccc;
   border-radius: 5px;
-  text-align: center;
   padding: 10px;
   height: calc(12.6% - 10px);
-  position: relative;
-  
 }
 
-.pass{
-  position: relative;
-  /*top: calc(50% - 45px);*/
+.verticalAlign{
+  display: table; 
+  text-align: center;
+}
+
+.verticalAlign .item{
+  letter-spacing: 2px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.configurationClick{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
 }

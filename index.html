@@ -4,17 +4,27 @@
     <meta charset="utf-8">
     <title>sistema_filas</title>
     <meta name="description" content="">
+    <!-- Styles -->
+    <link rel="stylesheet" href="libs/css/bootstrap.min.css">
+    <link rel="stylesheet" href="libs/css/toaster.css">
+    <link rel="stylesheet" href="styles/main.css">
+
+    <!-- External Scripts -->
     <script type="text/javascript" src="libs/js/jquery.js"></script>
     <script type="text/javascript" src="libs/js/angular.min.js"></script>
+    <script type="text/javascript" src="libs/js/angular-animate.min.js"></script>
+    <script type="text/javascript" src="libs/js/toaster.min.js"></script>
+
+    <!-- Scripts -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/service.js"></script>
 
     
     <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
-
-    <link rel="stylesheet" href="/libs/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/styles/main.css">
-    <script src="scripts/main.js"></script>
   </head>
   <body ng-controller="mainController">
+      <toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
+      <div ng-click="toggleConfiguration(true)" class="configurationClick"></div>
       <div class="container">
         <div class="col-md-12 company">
           <img src="http://fc00.deviantart.net/fs71/f/2011/211/1/5/ps3_test_logo_by_carlossaraivadesign-d424vhr.png">
@@ -25,8 +35,8 @@
           </div>
 
           <div class="box-content">
-            <div class="current">
-              A999 01
+            <div class="current verticalAlign">
+              <span class="item">{{currentPass.senha}}</span>
             </div>
           </div>
         </div>
@@ -35,48 +45,14 @@
             Senhas chamadas
           </div>
           <div class="box-content">
-            <div class="col-md-12 passItem">
-              <div class="pass">
-                A999 01
-              </div>
+            <div class="col-md-12 passItem verticalAlign" ng-repeat="item in calledPass track by $index">
+              <span class="item">
+                {{item.senha}}
+              </span>
             </div>
-            <div class="col-md-12 passItem">
-              <div class="pass">
-                A999 01
-              </div>
-            </div>
-            <div class="col-md-12 passItem">
-              <div class="pass">
-                A999 01
-              </div>
-            </div>
-            <div class="col-md-12 passItem">
-              <div class="pass">
-                A999 01
-              </div>
-            </div>
-            <div class="col-md-12 passItem">
-              <div class="pass">
-                A999 01
-              </div>
-            </div>
-            <div class="col-md-12 passItem">
-              <div class="pass">
-                A999 01
-              </div>
-            </div>
-            <div class="col-md-12 passItem">
-              <div class="pass">
-                A999 01
-              </div>
-            </div>
-            <div class="col-md-12 passItem">
-              <div class="pass">
-                A999 01
-              </div>
-            </div>
-          <div>
+          </div>
         </div>
       </div>
+      <configuration-popup ng-show="confPopup"></configuration-popup>
   </body>
 </html>
