@@ -27,3 +27,8 @@ O formato do json esperado é:
 
 Para adicionar ao histórico, na proxima requisição o valor tem que ser diferente do valor anterior. (caso ele seja 404, "" ou igual, a lista não ira atualizar.)
 
+Toda vez que a senha é atualizada a paginação volta para a pagina 1
+
+# Armazenamento
+
+As configurações são gravadas no localStorage do navegado, o tempo default é de 10 segundos para a busca de novas senhas e de 5 segundos para alteração de páginas.
