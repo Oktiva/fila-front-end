@@ -10,7 +10,7 @@ angular.module('fila',['serviceModule', 'toaster', 'ngAnimate'])
 	$scope.showingData = [];
 	$scope.maxPerPage = 6;
 	$scope.page = 1;
-
+	$scope.audio = new Audio('sound/alert-song.mp3');
 	$scope.setVars = function(){
 		service.getCurrentPass().then(function(data){
 			if($scope.currentPass.senha != ""){
@@ -18,6 +18,7 @@ angular.module('fila',['serviceModule', 'toaster', 'ngAnimate'])
 				$scope.paginate();
 			}
 			$scope.currentPass = data;
+			//$scope.audio.play();
 
 		});
 		setTimeout(function(){ $scope.setVars(); }, $scope.timeForRefresh * 1000);

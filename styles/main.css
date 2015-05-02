@@ -62,6 +62,10 @@ h3{
   width: 100%;
 }
 
+.hidden{
+  display: none;
+}
+
 .hasBg{
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
