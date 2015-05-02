@@ -37,7 +37,7 @@ h3{
 }
 
 .box-content{
-  height: calc(100% - 80px);
+    height: calc(100% - 80px);
 }
 
 .company{
@@ -71,10 +71,6 @@ h3{
 .calledPass{
   display: table;
   height: calc(100% - 80px);
-}
-
-.box-content{
-  height: 100%;
 }
 
 .passItem{
