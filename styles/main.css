@@ -66,6 +66,7 @@ h3{
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   margin: 20px;
+  padding-bottom: 10px;
 }
 
 .calledPass{
@@ -74,12 +75,12 @@ h3{
 }
 
 .passItem{
-  font-size: 60px;
+  font-size: 50px;
   margin: 5px 0;
   background-color: #ccc;
   border-radius: 5px;
   padding: 10px;
-  height: calc(16.7% - 10px);
+  height: calc(17% - 10px);
 }
 
 .verticalAlign{
