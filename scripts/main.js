@@ -6,6 +6,7 @@ angular.module('fila',['serviceModule', 'toaster', 'ngAnimate'])
 	$scope.currentPass = {"senha" : ""};
 	$scope.confPopup = false;
 	$scope.newTimer = $scope.timeForRefresh;
+	$scope.newTimerForPageRefresh = $scope.timeForPageRefresh;
 	$scope.calledPass = [];
 	$scope.showingData = [];
 	$scope.maxPerPage = 6;
@@ -15,10 +16,11 @@ angular.module('fila',['serviceModule', 'toaster', 'ngAnimate'])
 		service.getCurrentPass().then(function(data){
 			if($scope.currentPass.senha != ""){
 				$scope.calledPass.unshift({"senha" : $scope.currentPass.senha});
-				$scope.paginate();
+				$scope.page = 1;
+				$scope.refreshHistorical();
 			}
 			$scope.currentPass = data;
-			$scope.audio.play();
+			//$scope.audio.play();
 
 		});
 		setTimeout(function(){ $scope.setVars(); }, $scope.timeForRefresh * 1000);
@@ -31,19 +33,22 @@ angular.module('fila',['serviceModule', 'toaster', 'ngAnimate'])
 	}
 
 	$scope.paginate = function(){
-		if($scope.maxPerPage * ($scope.page - 1) > $scope.calledPass.length){
+		if($scope.maxPerPage * ($scope.page - 1) > $scope.calledPass.length - 1){
 			$scope.page = 1;
 			$scope.reset = true;
 		}
+		$scope.refreshHistorical();
+		$scope.page ++;
+	}
+
+	$scope.refreshHistorical = function(){
 		$scope.showingData = [];
 		for (var i = $scope.maxPerPage * ($scope.page - 1); i < $scope.maxPerPage * $scope.page; i++) {
 			if(typeof $scope.calledPass[i] != "undefined"){
 				$scope.showingData.push($scope.calledPass[i]);
 			}
 		};
-		//$scope.page ++;
-		
-	}
+	};
 
 
 	$scope.setVars();
@@ -58,17 +63,23 @@ angular.module('fila',['serviceModule', 'toaster', 'ngAnimate'])
 	}
 
 	$scope.saveInfo = function(){
-		if($scope.newTimer === null || $scope.newTimer == '' || $scope.newTimer == 0){
+		if($scope.newTimer === null || $scope.newTimer == '' || $scope.newTimer == 0 || 
+			$scope.newTimerForPageRefresh === null || $scope.newTimerForPageRefresh == '' || $scope.newTimerForPageRefresh == 0){
 			toaster.pop('error', "Campo Invalido", "Favor completar o campo");
 			return;
 		}
-		if($scope.newTimer < 1){
+		
+		if($scope.newTimer < 1 || $scope.newTimerForPageRefresh < 1){
 			toaster.pop('error', "Campo Invalido", "O numero inserido é inválido");
 			return;
 		}
 
+		$scope.timeForPageRefresh = $scope.newTimerForPageRefresh;
+		localStorage.setItem("timeForPageRefresh", $scope.timeForPageRefresh);
+
 		$scope.timeForRefresh = $scope.newTimer;
-		localStorage.setItem("timeForRefresh", $scope.timeForRefresh)
+		localStorage.setItem("timeForRefresh", $scope.timeForRefresh);
+
 		toaster.pop('success', "Sucesso!", "Infornação(ões) alterada(s)");
 		$scope.confPopup = false;
 	}
