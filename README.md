@@ -31,4 +31,4 @@ Toda vez que a senha é atualizada a paginação volta para a pagina 1
 
 # Armazenamento
 
-As configurações são gravadas no localStorage do navegado, o tempo default é de 10 segundos para a busca de novas senhas e de 5 segundos para alteração de páginas.
+As configurações são gravadas no localStorage do navegador, o tempo default é de 10 segundos para a busca de novas senhas e de 5 segundos para alteração de páginas.
