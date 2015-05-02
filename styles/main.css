@@ -72,17 +72,18 @@ h3{
 }
 
 .passItem{
-  font-size: 60px;
+  font-size: 30px;
   margin: 5px 0;
   background-color: #ccc;
+  border-radius: 5px;
   text-align: center;
   padding: 10px;
-  height: calc(20% - 10px);
+  height: calc(12.6% - 10px);
   position: relative;
-  top: calc();
+  
 }
 
 .pass{
   position: relative;
-  top: calc(50% - 45px);
+  /*top: calc(50% - 45px);*/
 }
