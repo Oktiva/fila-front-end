@@ -1,0 +1,12 @@
+{
+	"id": "com.oktiva.fila.app",
+	"version": "0.0.1",
+	"vendor": "Oktiva",
+	"type": "web",
+	"main": "index.html",
+	"title": "Sistema de atendimento",
+	"icon": "icon.png",
+	"largeIcon": "largeIcon.png",
+	"uiRevision":2,
+	"enyoVersion": "2.5"
+}
