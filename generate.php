@@ -8,13 +8,18 @@ function generateRandomString($length = 1) {
         $randomString .= $characters[rand(0, $charactersLength - 1)];
     }
     $randomString .= rand(100, 999);
-    $randomString .= " ";
-    $randomString .= rand(10, 99);
     return $randomString;
 }
 
-if(rand(0, 3) == 3){
-    echo '{"senha" : "'.generateRandomString().'"}';    
+if(rand(0, 1) == 0){
+    $strRet = "[";
+    for ($i=0; $i < rand(1, 3); $i++) { 
+        if($i != 0)
+            $strRet .= ",";
+        $strRet .= '{"'.generateRandomString().'" : '.rand(10, 99).'}';
+    }
+    $strRet .= "]";
+    echo $strRet;
 }else{
     header("HTTP/1.0 404 Not Found");
 }

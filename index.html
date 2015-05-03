@@ -18,37 +18,235 @@
     <!-- Scripts -->
     <script src="scripts/main.js"></script>
     <script src="scripts/service.js"></script>
+    <style type="text/css">
+    .mainPass{
+      width: 600px;
+      position: relative;
+      left: 50%;
+      top: 10px;
+      -webkit-transform: translate(-50%, 0%);
+      transform: translate(-50%, 0%);
+    }
+    .mainPass tr td{
+      font-size: 160px;
+      padding: 0px 50px;
+    }
+    .mainPass tr th{
+      font-size: 50px;
+      padding: 0px 50px;
+    }
+    .mainPass tr td:first-child{
+      width: 30%;
+
+    }
+    .mainPass tr td:first-child,.mainPass tr th:first-child{
+      /*border-right: 4px solid #ccc;*/
+    }
+    .tablesCalled{
+      display: table;
+      position: relative;
+      left: 50%;
+      top: 10px;
+      -webkit-transform: translate(-50%, 0%);
+      transform: translate(-50%, 0%);
+    }
+    .calledPass{
+      margin: 0 20px;
+      float: left;
+      /*width: 400px;*/
+      position: relative;
+    }
+    .calledPass tr td{
+      font-size: 70px;
+      padding: 0px 10px;
+    }
+    .calledPass tr th{
+      font-size: 30px;
+      padding: 0px 10px;
+    }
+    .calledPass tr td:first-child{
+      width: 200px;
+    }
+    .calledPass tr td:last-child{
+      width: 80px;
+    }
+
+    </style>
 
     
     <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
   </head>
   <body ng-controller="mainController">
       <toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
-      <div ng-click="toggleConfiguration(true)" class="configurationClick"></div>
+     <!--  <div ng-click="toggleConfiguration(true)" class="configurationClick"></div> -->
       <div class="container">
         <div class="col-md-12 company">
           <img src="http://fc00.deviantart.net/fs71/f/2011/211/1/5/ps3_test_logo_by_carlossaraivadesign-d424vhr.png">
         </div>
-        <div class="col-md-8 currentPass hasBg">
-          <div class="title">
-            Senha Atual
-          </div>
+        <div class="mainBox currentPass hasBg">
           <div class="box-content">
-            <div class="current verticalAlign">
-              <span class="item">{{currentPass.senha}}</span>
-            </div>
+            <!-- <div class="current verticalAlign"> -->
+              <!-- <span class="item">{{currentPass.senha}}</span> -->
+            <!-- </div> -->
+            <table class="mainPass">
+              <tr>
+                <th class="text-left">Senha</th>
+                <th class="text-left">Caixa</th>
+              </tr>
+              <tr>
+                <td class="text-right">
+                  A123
+                </td>
+                <td class="text-left">
+                  12
+                </td>
+              </tr>
+              <tr>
+                <td class="text-right">
+                  A123
+                </td>
+                <td class="text-left">
+                  12
+                </td>
+              </tr>
+              <tr>
+                <td class="text-right">
+                  A123
+                </td>
+                <td class="text-left">
+                  12
+                </td>
+              </tr>
+            </table>
           </div>
         </div>
-        <div class="col-md-4 calledPass hasBg">
-          <div class="title">
-            Senhas chamadas
-          </div>
-          <div class="box-content">
-            <div class="col-md-12 passItem verticalAlign" ng-repeat="item in showingData track by $index">
-              <span class="item">
-                {{item.senha}}
-              </span>
-            </div>
+        <div class="mainBox currentPass hasBg">
+          <div class="tablesCalled">
+            <table class="calledPass">
+              <tr>
+                <th class="text-right">Senha</th>
+                <th>Caixa</th>
+              </tr>
+              <tr>
+                  <td class="text-right">
+                    A123
+                  </td>
+                  <td class="text-left">
+                    12
+                  </td>
+              </tr>
+              <tr>
+                  <td class="text-right">
+                    A123
+                  </td>
+                  <td class="text-left">
+                    12
+                  </td>
+              </tr>
+              <tr>
+                  <td class="text-right">
+                    A123
+                  </td>
+                  <td class="text-left">
+                    12
+                  </td>
+              </tr>
+              <tr>
+                  <td class="text-right">
+                    A123
+                  </td>
+                  <td class="text-left">
+                    12
+                  </td>
+              </tr>
+              <tr>
+                  <td class="text-right">
+                    A123
+                  </td>
+                  <td class="text-left">
+                    12
+                  </td>
+              </tr>
+              <tr>
+                  <td class="text-right">
+                    A123
+                  </td>
+                  <td class="text-left">
+                    12
+                  </td>
+              </tr>
+              <tr>
+                  <td class="text-right">
+                    A123
+                  </td>
+                  <td class="text-left">
+                    12
+                  </td>
+              </tr>
+            </table>
+            <table class="calledPass">
+              <tr>
+                <th class="text-right">Senha</th>
+                <th>Caixa</th>
+              </tr>
+              
+              <tr>
+                  <td class="text-right">
+                    A123
+                  </td>
+                  <td class="text-left">
+                    12
+                  </td>
+              </tr>
+              <tr>
+                  <td class="text-right">
+                    A123
+                  </td>
+                  <td class="text-left">
+                    12
+                  </td>
+              </tr>
+              <tr>
+                  <td class="text-right">
+                    A123
+                  </td>
+                  <td class="text-left">
+                    12
+                  </td>
+              </tr>
+              <tr>
+                  <td class="text-right">
+                    A123
+                  </td>
+                  <td class="text-left">
+                    12
+                  </td>
+              </tr>
+              <tr>
+                  <td class="text-right">
+                    A123
+                  </td>
+                  <td class="text-left">
+                    12
+                  </td>
+              </tr>
+              <tr>
+                  <td class="text-right">
+                    A123
+                  </td>
+                  <td class="text-left">
+                    12
+                  </td>
+              </tr>
+              <tr>
+                  <td class="text-right">
+                    A123
+                  </td>
+                  <td class="text-left">
+                    12
+                  </td>
+              </tr>
+            </table>
           </div>
         </div>
       </div>
