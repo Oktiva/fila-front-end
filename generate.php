@@ -11,18 +11,12 @@ function generateRandomString($length = 1) {
     return $randomString;
 }
 
-if(rand(0, 1) == 0){
-    $strRet = "[";
-    for ($i=0; $i < rand(1, 3); $i++) { 
-        if($i != 0)
-            $strRet .= ",";
-        $strRet .= '{"'.generateRandomString().'" : '.rand(10, 99).'}';
-    }
-    $strRet .= "]";
-    echo $strRet;
-}else{
-    header("HTTP/1.0 404 Not Found");
+$strRet = "[";
+for ($i=0; $i < rand(1, 20); $i++) { 
+    if($i != 0)
+        $strRet .= ",";
+    $strRet .= '{"senha" : "'.generateRandomString().'", "guiche" : '.rand(10, 99).' }';
 }
-
-
+$strRet .= "]";
+echo $strRet;
 ?>

@@ -20,14 +20,16 @@ $http.get('v1.0/data/teste2').success(function(data) {
 O formato do json esperado é:
 
 ```
-{
-  "senha" : valor
-}
+[
+	{
+		"senha" : "I039",
+		"guiche" : 12
+	}
+]
 ```
 
-Para adicionar ao histórico, na proxima requisição o valor tem que ser diferente do valor anterior. (caso ele seja 404, "" ou igual, a lista não ira atualizar.)
+Para adicionar ao histórico, na proxima requisição a senha tem que ser diferente do que a senha anterior. 
 
-Toda vez que a senha é atualizada a paginação volta para a pagina 1
 
 # Armazenamento
 
