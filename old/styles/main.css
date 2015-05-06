@@ -1,0 +1,110 @@
+body{
+  padding: 0;
+  margin: 0;
+  background-image: url("http://wallpaperscraft.com/image/50782/1920x1080.jpg");
+  width: 100%;
+  height: 100%;
+}
+
+body *{
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.configurationClick{
+  position: fixed;
+  width: 100%;
+  height: 690px;
+  z-index: 100;
+}
+
+.rigthBox, .leftBox{
+  margin: 1%;
+  position: absolute;
+  float: left;
+  display: table;
+  border-radius: 10px;
+}
+.rigthBox{
+  width: 73%;
+  height: 690px;
+}
+
+.leftBox{
+  padding:10px;
+  left: 74%;
+  width: 24%;
+  height: 690px;
+}
+
+.box-content{
+  position: relative;
+  margin-top: 2%;
+}
+
+.rightItem{
+  width: 45%;
+  margin: 2%;
+  float: left;
+  display: table;
+}
+
+.rightItem .password, .rightItem .box{
+  float: left;
+}
+.rightItem .password{
+  width: 60%;
+}
+.rightItem .box{
+  width: 40%;
+}
+.rightItem .title{
+  font-size: 30px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+.rightItem .password .value{
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  text-align: center;
+}
+.rightItem .box .value{
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  text-align: center;
+}
+.rightItem .value{
+  font-size: 80px;
+  color: #fff;
+  padding: 10px;
+}
+
+.leftItem{
+  width: 100%;
+  margin: 4.5% 0;
+  display: table;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.date{
+  position: absolute;
+  color: #fff;
+  margin-top: 20%;
+  left: 80%;
+}
+
+.leftItem .password,.leftItem .box{
+  float: left;
+  font-size: 40px;
+  color: #fff;
+  padding: 12px;
+}
+.leftItem .password{
+  width: 60%;
+  text-align: right;
+}
+
+.leftItem .box{
+  width: 40%;
+}

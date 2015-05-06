@@ -13,27 +13,27 @@ body *{
 .configurationClick{
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: 690px;
   z-index: 100;
 }
 
 .rigthBox, .leftBox{
-  margin: 10px;
+  margin: 1%;
   position: absolute;
   float: left;
   display: table;
   border-radius: 10px;
 }
 .rigthBox{
-  width: calc(75% - 20px);
-  height: calc(100% - 20px);
+  width: 73%;
+  height: 690px;
 }
 
 .leftBox{
   padding:10px;
-  left: calc(75%);
-  width: calc(25% - 20px);
-  height: calc(100% - 20px);
+  left: 74%;
+  width: 24%;
+  height: 690px;
 }
 
 .box-content{
@@ -42,8 +42,8 @@ body *{
 }
 
 .rightItem{
-  width: calc(50% - 60px);
-  margin: 30px;
+  width: 45%;
+  margin: 2%;
   float: left;
   display: table;
 }
@@ -58,7 +58,7 @@ body *{
   width: 40%;
 }
 .rightItem .title{
-  font-size: 50px;
+  font-size: 30px;
   padding-bottom: 50px;
   text-align: center;
 }
@@ -73,14 +73,14 @@ body *{
   text-align: center;
 }
 .rightItem .value{
-  font-size: 100px;
+  font-size: 80px;
   color: #fff;
   padding: 10px;
 }
 
 .leftItem{
   width: 100%;
-  margin: 3% 0;
+  margin: 4.5% 0;
   display: table;
   border-radius: 10px;
   overflow: hidden;
@@ -90,13 +90,13 @@ body *{
 .date{
   position: absolute;
   color: #fff;
-  left: calc(100% - 70px);
-  top: calc(100% - 30px);
+  margin-top: 70%;
+  left: 80%;
 }
 
 .leftItem .password,.leftItem .box{
   float: left;
-  font-size: 50px;
+  font-size: 40px;
   color: #fff;
   padding: 12px;
 }
@@ -107,17 +107,4 @@ body *{
 
 .leftItem .box{
   width: 40%;
-}
-
-
-@media (min-width: 1900px) {
-    .rightItem .value{
-      font-size: 140px;
-    }
-    .leftItem .password,.leftItem .box{
-      font-size: 70px;
-    }
-    .rightItem .title{
-      font-size: 50px;
-    }
 }

@@ -1,71 +1,4 @@
-<!doctype html>
-<html class="no-js" ng-app="fila">
-  <head>
-    <meta charset="utf-8">
-    <title>sistema_filas</title>
-    <meta name="description" content="">
-    <!-- Styles -->
-    <link rel="stylesheet" href="libs/css/bootstrap.min.css">
-    <link rel="stylesheet" href="libs/css/toaster.css">
-    <link rel="stylesheet" href="styles/main.css">
-
-    <!-- External Scripts -->
-    <script type="text/javascript" src="libs/js/jquery.js"></script>
-    <script type="text/javascript" src="libs/js/angular.min.js"></script>
-    <script type="text/javascript" src="libs/js/angular-animate.min.js"></script>
-    <script type="text/javascript" src="libs/js/toaster.min.js"></script>
-
-    <!-- Scripts -->
-    <script src="scripts/main.js"></script>
-    <script src="scripts/service.js"></script>
-    <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
-  </head>
-  <body ng-controller="mainController">
-      <style type="text/css">
-        .rightItem .value, .leftItem .password,.leftItem .box{
-          background-color: {{colors.boxColor}};
-        }
-        .rightItem .value, .date, .leftItem .password,.leftItem .box{
-          color: {{colors.boxFont}};
-        }
-        .rightItem .title{
-          color: {{colors.titleColor}};
-        }
-        .rigthBox, .leftBox{
-          background-color: {{colors.background}};
-        }
-        body{
-          background-image: url({{colors.backgroundImage}});
-        }
-      </style>
-      <toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
-      <div ng-click="toggleConfiguration(true)" class="configurationClick"></div>
-      <div class="rigthBox">
-        <div class="box-content">
-          <div class="rightItem" ng-repeat="item in currentPass track by $index">
-            <div class="password">
-              <div class="title" ng-show="$index < 2 ">Senha</div>
-              <div class="value">{{item.senha}}</div>
-            </div>
-            <div class="box">
-              <div class="title" ng-show="$index < 2 ">Guichê</div>
-              <div class="value">{{item.guiche}}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="leftBox">
-          <div class="leftItem" ng-repeat="item in showingData track by $index">
-            <div class="password">{{item.senha}}</div>
-            <div class="box">{{item.guiche}}</div>
-            <div class="date">ás {{item.data  | date:'hh:mm'}}</div>
-          </div>
-      </div>
-
-
-
-      
-      <div class="modal fade in" style="display: block;background-color: rgba(0,0,0,0.8);" stop-event='click' ng-show="confPopup">
+<div class="modal fade in" style="display: block;background-color: rgba(0,0,0,0.8);" stop-event='click'>
     <div class="modal-dialog modal-md">
       <div class="modal-content">
         <div class="modal-header">
@@ -130,5 +63,3 @@
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div>
-  </body>
-</html>
